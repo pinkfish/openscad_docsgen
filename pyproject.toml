@@ -14,7 +14,7 @@ maintainers = [
 description = "A processor to generate Markdown code documentation with images from OpenSCAD source comments."
 readme = "README.rst"
 license = {file =  "LICENSE"}
-requires-python = ">=3.7"
+requires-python = ">=3.10"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Console",
