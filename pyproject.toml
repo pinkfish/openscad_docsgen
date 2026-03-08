@@ -43,6 +43,12 @@ dependencies = [
 openscad-docsgen = "openscad_docsgen:main"
 openscad-mdimggen = "openscad_docsgen.mdimggen:mdimggen_main"
 
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
 [project.urls]
 "Homepage" = "https://github.com/belfryscad/openscad_docsgen"
 "Repository" = "https://github.com/belfryscad/openscad_docsgen"
