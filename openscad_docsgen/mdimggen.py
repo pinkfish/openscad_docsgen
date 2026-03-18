@@ -98,7 +98,8 @@ class MarkdownImageGen(object):
                                 imgfile, script, extyp,
                                 starting_cb=self.img_started,
                                 completion_cb=self.img_completed,
-                                verbose=opts.verbose
+                                verbose=opts.verbose,
+                                enabled_features= [item.strip() for item in opts.enabled_features.split(",")]
                             )
                             if show_script:
                                 out.append("```openscad")
@@ -147,6 +148,8 @@ def mdimggen_main():
                         help="If given, don't generate images, but do try executing the scripts.")
     parser.add_argument('-I', '--image_root', default=defaults.get("image_root", "images"),
                         help='The directory to put generated images in.')
+    parser.add_argument('-e', '--enabled_features', default=defaults.get("enabled_features", ""),
+                        help='The openscad features to enable.')
     parser.add_argument('-f', '--force', action="store_true",
                         help='If given, force regeneration of images.')
     parser.add_argument('-a', '--png-animation', action="store_true",
