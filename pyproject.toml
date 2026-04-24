@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "openscad_docsgen"
-version = "2.0.50"
+version = "2.0.55"
 authors = [
   { name="Revar Desmera", email="revarbat@gmail.com" },
 ]
@@ -14,7 +14,7 @@ maintainers = [
 description = "A processor to generate Markdown code documentation with images from OpenSCAD source comments."
 readme = "README.rst"
 license = {file =  "LICENSE"}
-requires-python = ">=3.7"
+requires-python = ">=3.10"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Console",
@@ -35,16 +35,23 @@ dependencies = [
     "pillow>=10.3.0",
     "PyYAML>=6.0",
     "scipy>=1.15.3",
-    "openscad_runner@git+https://github.com/pinkfish/openscad_runner"
+    "imageio>=2.37.0",
+    "openscad_runner>=1.2.2",
 ]
 
 [project.scripts]
 openscad-docsgen = "openscad_docsgen:main"
 openscad-mdimggen = "openscad_docsgen.mdimggen:mdimggen_main"
 
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
 [project.urls]
 "Homepage" = "https://github.com/belfryscad/openscad_docsgen"
-"Repository" = "https://github.com/pinkfish/openscad_docsgen"
+"Repository" = "https://github.com/belfryscad/openscad_docsgen"
 "Bug Tracker" = "https://github.com/belfryscad/openscad_docsgen/issues"
 "Releases" = "https://github.com/belfryscad/openscad_docsgen/releases"
 "Usage" = "https://github.com/belfryscad/openscad_docsgen/README.rst"
